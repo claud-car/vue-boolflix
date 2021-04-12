@@ -16,13 +16,13 @@
         <img src="./img/boolflix_logo.png" alt="">
         <h1>Boolflix</h1>
         <div class="search-bar">
-          <input type="text" value="" placeholder="Cerca il film">
-          <button type="button" name="button">Cerca</button>
+          <input type="text" value="" placeholder="Cerca il film" v-model="search" @keyup.enter="searchMovie">
+          <button type="button" name="button" @click="searchMovie">Cerca</button>
         </div>
       </div>
       <div class="cards">
         <div class="card" v-for="movie in movies">
-          <img :src=`https://image.tmdb.org/t/p/w500${movie.poster_path}` alt="">
+          <img :src=`https://image.tmdb.org/t/p/w500/${movie.poster_path}` alt="">
           <div class="text">
             <div class="info">
               <p>Titolo: {{movie.title}}</p>
