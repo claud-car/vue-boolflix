@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+}
+
+body{
+  background-color: black;
+}
+
+.container{
+  position: relative;
+}
+
+.title{
+  background-color: #303030;
+  padding: 5px 25px;
+  position: fixed;
+  z-index: 1;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1{
+  text-align: center;
+  font-size: 70px;
+  letter-spacing: 4px;
+  color: red;
+}
+
+.title img{
+  width: 80px;
+}
+
+.title input{
+  padding: 10px 5px;
+  outline: 0;
+}
