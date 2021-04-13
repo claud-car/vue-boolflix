@@ -32,6 +32,18 @@ h1{
   color: red;
 }
 
+#spacing{
+  height: 100px;
+}
+
+h2{
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 4px;
+  color: red;
+  padding-top: 30px;
+}
+
 .title img{
   width: 80px;
 }
@@ -48,14 +60,13 @@ h1{
 }
 
 .cards{
-  padding-top: 90px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .card{
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: 450px;
   background-color: #000;
   margin: 20px 30px;
   position: relative;
@@ -63,8 +74,8 @@ h1{
 }
 
 .card img{
-  width: 300px;
-  height: 350px;
+  width: 400px;
+  height: 450px;
   /* background-image: url(./img/noimage.jpg);
   background-position: center; */
 }
@@ -88,12 +99,26 @@ h1{
   display: flex;
   flex-direction: column;
   overflow: auto;
+  align-items: center;
+}
+
+.stars{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 0;
+}
+
+.stars i{
+  margin-left: 5px;
+  color: yellow;
 }
 
 .card p{
   font-size: 22px;
-  margin: 10px 0;
-  margin-bottom: 20px;
+  margin: 2px 0;
+  margin-bottom: 4px;
 }
 
 .card span{
@@ -101,12 +126,13 @@ h1{
 }
 
 .card:hover  .info{
-  background-color: grey;
+  background-color: #000;;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 .info img{
-  margin-top: 20px;
+  margin: 4px 0;
   height: 60px;
   width: 100px;
 }
