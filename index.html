@@ -21,14 +21,16 @@
         </div>
       </div>
       <div class="cards">
-        <div class="card" v-for="movie in movies">
+        <div class="card" v-for="movie in movies" v-if="(movie.poster_path)">
           <img :src=`https://image.tmdb.org/t/p/w500/${movie.poster_path}` alt="">
           <div class="text">
             <div class="info">
-              <p>Titolo: {{movie.title}}</p>
-              <p>Titolo originale: {{movie.original_title}}</p>
+              <p>Titolo: {{movie.title || movie.name}}</p>
+              <p>Titolo originale: {{movie.original_title || movie.original_name}}</p>
               <span>Lingua: {{movie.original_language}}</span><br>
               <span>Voto: {{movie.vote_average}}</span>
+              <p>{{movie.season_number}}</p>
+              <img :src=`https://www.unknown.nu/flags/images/${movie.original_language}-100`>
             </div>
           </div>
         </div>
