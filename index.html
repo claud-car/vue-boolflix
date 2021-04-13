@@ -19,14 +19,18 @@
         <img src="./img/boolflix_logo.png" alt="">
         <h1>Boolflix</h1>
         <div class="search-bar">
+          <!-- qui si inserisce il film o serie tv che si vuole cercare -->
           <input type="text" value="" placeholder="Cerca il film" v-model="search" @keyup.enter="searchAll">
-          <button type="button" name="button" @click="searchAll">Cerca</button>
+          <i class="fas fa-search" @click="searchAll"></i>
+          <!-- <button type="button" name="button" @click="searchAll">Cerca</button> -->
         </div>
       </div>
       <div id="spacing"></div>
       <h2 v-if="movies != ''">Film</h2>
       <div class="cards">
+        <!-- V-for per caricare i film -->
         <div class="card" v-for="movie in movies">
+          <!-- v-if e v-else per cambiare img se non esiste alcun poster -->
           <img v-if="movie.poster_path" :src=`https://image.tmdb.org/t/p/w500/${movie.poster_path}` alt="">
           <img v-else src="./img/noPoster.png">
           <div class="text">
@@ -37,10 +41,12 @@
               <!-- <span>Voto: {{movie.vote_average}}</span> -->
               <div class="stars">
                 <p>Voto: </p>
+                <!-- v-for per caricare le stelle in base al voto prendendo la funzione -->
                 <i v-for="fullStar in stars(movie)" class="fas fa-star" ></i>
                 <i v-for="hollowStar in (5 - stars(movie))" class="far fa-star"></i>
               </div>
               <img  :src=`https://www.unknown.nu/flags/images/${movie.original_language}-100`>
+              <!-- vif e v-else per cambiare il testo se il film non ha dettagli -->
               <p v-if="movie.overview != ''">Overview: {{movie.overview}}</p>
               <p v-else>Sorry,no overview,go visit www.imdb.com</p>
             </div>
@@ -52,7 +58,9 @@
     <div class="container">
       <h2 v-if="tvSeries != ''">Tv Series</h2>
       <div class="cards">
+        <!-- V-for per caricare le serie tv -->
         <div class="card" v-for="serie in tvSeries">
+          <!-- v-if e v-else per cambiare img se non esiste alcun poster -->
           <img v-if="serie.poster_path" :src=`https://image.tmdb.org/t/p/w500/${serie.poster_path}` alt="">
           <img v-else src="./img/noPoster.png">
           <div class="text">
@@ -63,10 +71,12 @@
               <!-- <span>Voto: {{serie.vote_average}}</span> -->
               <div class="stars">
                 <p>Voto: </p>
+                <!-- v-for per caricare le stelle in base al voto prendendo la funzione -->
                 <i v-for="fullStars in stars(serie)" class="fas fa-star" ></i>
                 <i v-for="emptyStars in (5 - stars(serie))" class="far fa-star"></i>
               </div>
               <img  :src=`https://www.unknown.nu/flags/images/${serie.original_language}-100`>
+              <!-- vif e v-else per cambiare il testo se la serie TV non ha dettagli -->
               <p v-if="serie.overview != ''">Overview: {{serie.overview}}</p>
               <p v-else>Sorry,no overview,go visit www.imdb.com</p>
             </div>

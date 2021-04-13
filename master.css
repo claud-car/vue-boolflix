@@ -48,15 +48,32 @@ h2{
   width: 80px;
 }
 
-.title input{
-  padding: 5px 2px;
-  outline: 0;
-  margin-right: 10px;
+.search-bar{
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  background-color: lightgrey;
 }
 
-.title button{
+.title input{
+  padding: 10px 2px;
+  outline: 0;
+}
+
+/* .title button{
   padding: 5px 2px;
   border-radius: 5px;
+} */
+
+.title i{
+  font-size: 20px;
+  color: grey;
+  padding: 0 10px;
+}
+
+.title i:hover{
+  cursor: pointer;
+  color: #fff;
 }
 
 .cards{

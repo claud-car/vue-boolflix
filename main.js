@@ -13,12 +13,14 @@ var app = new Vue ({
   mounted() {
   },//fine mounted
   methods:{
+    //funzione che racchiude le 2 funzioni per cercare film e serietv
     searchAll() {
       this.searchMovie();
       this.searchTvSeries();
       this.movies= '';
       this.tvSeries= '';
     },
+    //funzione per richiamare i film dall'api
     searchMovie: function() {
       axios.get(`${this.link}/search/movie?api_key=${this.apiKey}&query=${this.search}`)
         .then((response) => {
@@ -26,6 +28,7 @@ var app = new Vue ({
           this.search = '';
         });
     },
+    //funzione per richiamare le serie TV dall'api
     searchTvSeries:function() {
       axios.get(`${this.link}/search/tv?api_key=${this.apiKey}&query=${this.search}`)
       .then((response) => {
@@ -33,6 +36,7 @@ var app = new Vue ({
         this.search = '';
       });
     },
+    //funzione per calcolare le stelle da 1 a 5 in base al voto
     stars: function(star) {
       return Math.ceil( star.vote_average / 2 );
     },
